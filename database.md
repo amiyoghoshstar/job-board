@@ -1,0 +1,18 @@
+Jobs
+- company_id
+- title
+- description
+- category
+- apply_url
+- apply_count
+- position
+- salary -> nullable
+- locations
+- skills -> nullable
+- unique_id
+- seo_image -> nullable
+- seo_title -> nullable
+- seo_keyword -> nullable
+- seo_description -> nullable
+- source
+- status -> pending, approved, disabled
