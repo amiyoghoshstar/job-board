@@ -4,7 +4,7 @@ Jobs
 - description
 - category
 - apply_url
-- apply_count
+- apply_count -> inital 0 disabled 
 - position
 - salary -> nullable
 - locations
@@ -17,11 +17,16 @@ Jobs
 - source
 - status -> pending, approved, disabled
 
+
 Company
 - logo
 - name
 - description
-- others
+- website -> nullable
+- twitter -> nullable
+- instagram -> nullable
+- facebook -> nullable
+- linkedin -> nullable
 - seo_image -> nullable
 - seo_title -> nullable
 - seo_keyword -> nullable

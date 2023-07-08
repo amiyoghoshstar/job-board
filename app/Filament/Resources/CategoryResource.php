@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\LocationResource\Pages;
-use App\Filament\Resources\LocationResource\RelationManagers;
-use App\Models\Location;
+use App\Filament\Resources\CategoryResource\Pages;
+use App\Filament\Resources\CategoryResource\RelationManagers;
+use App\Models\Category;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -19,12 +19,11 @@ use Filament\Forms\Components\Textarea;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
 
-
-class LocationResource extends Resource
+class CategoryResource extends Resource
 {
-    protected static ?string $model = Location::class;
+    protected static ?string $model = Category::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-location-marker';
+    protected static ?string $navigationIcon = 'heroicon-o-collection';
 
     public static function form(Form $form): Form
     {
@@ -32,7 +31,7 @@ class LocationResource extends Resource
             ->schema([
                 Card::make()
                     ->schema([
-                        TextInput::make('name')->reactive()->afterStateUpdated(fn ($state, callable $set) => $set('seo_title', "Remote jobs from {$state}")),
+                        TextInput::make('name')->reactive()->afterStateUpdated(fn ($state, callable $set) => $set('seo_title', "Remote jobs for {$state}")),
                         FileUpload::make('seo_image'),
                         TextInput::make('seo_title'),
                         Textarea::make('seo_keywords'),
@@ -65,7 +64,7 @@ class LocationResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageLocations::route('/'),
+            'index' => Pages\ManageCategories::route('/'),
         ];
     }
 }
